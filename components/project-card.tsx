@@ -294,7 +294,7 @@ export default function ProjectCard ({ data }) {
            {viewDetails &&
            <ImageWrapper>
            <ImageContainer id={id} maxHeight={image.dimensions.height} maxWidth={image.dimensions.width}>
-           <Image 
+           {/* <Image 
             placeholder={title}
             src={matchPhotoSource(id)} 
             alt={image.placeholder} 
@@ -302,7 +302,7 @@ export default function ProjectCard ({ data }) {
             sizes="(max-width: 768px) 100vw,
             (max-width: 1200px) 50vw,
             33vw"
-            />
+            /> */}
            </ImageContainer>
            </ImageWrapper>
            }

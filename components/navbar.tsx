@@ -199,13 +199,9 @@ const NavList = ({toggle, setToggle}) => {
           </Link>
         </NavListItem>
         <NavListItem>
-          <Link href="/blog" passHref legacyBehavior>
-          <NavLink
-            tabIndex={0}   
-          >
-            /Blog
+          <NavLink href="https://jordattebayo.com" target="_blank" >
+            Blog
           </NavLink>
-          </Link>
         </NavListItem>
         {/* <NavListItem>
           <Link href="/rss/feed.xml" passHref legacyBehavior>
@@ -231,9 +227,6 @@ const NavList = ({toggle, setToggle}) => {
           tabIndex={0}
           onKeyDown={(e) => handleKeyPress(e)}
           htmlFor="themeToggle">
-          {/* <CrescentMoon></CrescentMoon> */}
-            <Emojis>🌞 </Emojis> 
-            <Emojis >🌛</Emojis>
           </ToggleLabel>
         </ToggleWrapper>  
         </NavListItem>
