@@ -23,16 +23,10 @@ const Link = styled.a`
 export function ContactButton() {
   return (
     <LinkText>
-      <span id="#contact">You can reach me here:</span>
       <List>
       <ListItem>
-        <Link target="_blank" href="https://mstdn.social/@jordattebayo">
-          Mastodon
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link target="_blank" href="https://twitter.com/jordattebayo">
-          Twitter
+        <Link target="_blank" href="https://www.linkedin.com/in/jordanmbooker">
+          LinkedIn
         </Link>
       </ListItem>
       <ListItem>
@@ -40,7 +34,6 @@ export function ContactButton() {
           Email
         </Link>
       </ListItem>
-
       </List>
     </LinkText>
   );
