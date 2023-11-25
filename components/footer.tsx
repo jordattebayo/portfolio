@@ -34,7 +34,7 @@ export default function AboutPage() {
     <>
     <Footer>
       <TextWrapper>
-      <FooterText>Jordan Booker &copy;2022</FooterText> 
+      <FooterText>Jordan Booker &copy;{new Date().getFullYear()}</FooterText> 
       <FooterText>Built with <LinkItem href="https://nextjs.org/" target="_blank">NextJS</LinkItem>. Hosted on <LinkItem href="https://vercel.com/" target="_blank">Vercel.</LinkItem></FooterText>
       </TextWrapper>    
     </Footer>
