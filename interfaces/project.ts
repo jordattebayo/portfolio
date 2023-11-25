@@ -4,6 +4,7 @@ interface Dimensions {
 }
 
 interface Image {
+    src: string;
     placeholder: string;
     dimensions: Dimensions;
 }

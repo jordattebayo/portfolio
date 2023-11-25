@@ -29,10 +29,11 @@ const projects: Project[] = [
     slug: "amplifier-creative",
     title: "Amplifier Creative",
     image: {
-      "placeholder": "Amplifier Creative's website",
-      "dimensions": {
-        "width": "620",
-        "height": "358"
+      src: "/assets/projects/amplifierScreenshot.png",
+      placeholder: "Amplifier Creative's website",
+      dimensions: {
+        width: "620",
+        height: "358"
       }
     },
     role: "Developer",
@@ -48,6 +49,7 @@ const projects: Project[] = [
     slug: "slate",
     title: "React Line Chart for Slate.host",
     image:  {
+      src: "/assets/projects/amplifierScreenshot.png",
       placeholder: "An SVG Line Chart",
       dimensions: {
         width: "384",
@@ -67,6 +69,7 @@ const projects: Project[] = [
     slug: "travel-planner-app",
     title: "Travel Planner App",
     image:  {
+      src: "/assets/projects/amplifierScreenshot.png",
       placeholder: "A gif of the travel planner app being used",
       dimensions: {
         width: "473",
@@ -86,6 +89,7 @@ const projects: Project[] = [
     slug: "lee",
     title: "Lee® Indigood",
     image:  {
+      src: "/assets/projects/amplifierScreenshot.png",
       placeholder: "A mockup of a Lee Webpage",
       dimensions: {
         width: "600",
@@ -105,6 +109,7 @@ const projects: Project[] = [
     slug: "news",
     title: "Evaluate News NLP",
     image:  {
+      src: "/assets/projects/amplifierScreenshot.png",
       placeholder: "A small news api integration app",
       dimensions: {
         width: "540",
@@ -124,6 +129,7 @@ const projects: Project[] = [
     slug: "photo-blog",
     title: "Photo Blog",
     image:  {
+      src: "/assets/projects/amplifierScreenshot.png",
       placeholder: "A sample photo blog",
       dimensions: {
         width: "420",
@@ -149,7 +155,7 @@ export default function Home({ setSelectedTheme }) {
       <ThemeShape bottomAligned/>
       <ProjectsWrapper id="portfolio">
         {projects.map((project) => {
-          return <ProjectCard key={project.id} data={project}/>
+          return <ProjectCard key={project.id} project={project}/>
         })}
       </ProjectsWrapper>
       </main>

@@ -8,6 +8,7 @@ import lee from "../public/assets/projects/desktopLeeIndigoodMock.png";
 import travel from "../public/assets/projects/travel-app.gif";
 import news from "../public/assets/projects/languageScreenshot.jpg";
 import CardCarousel from './card-carousel';
+import Project from "../interfaces/project";
 
 
 interface ImageContainerProps {
@@ -268,8 +269,12 @@ function chooseSecondaryColor(id: string, theme: DefaultTheme): DefaultTheme {
   }
 }
 
-export default function ProjectCard ({ data }) {
-  const { id, title, image, role, difficulties, solution, features, tech, live, git  } = data
+type Props = {
+  project: Project
+}
+
+export default function ProjectCard ({ project }: Props) {
+  const { id, title, image, role, difficulties, solution, features, tech, live, git  } = project
   const ref = useRef();
   useOnClickOutside(ref, () => setViewDetails(false));
 
@@ -280,7 +285,6 @@ export default function ProjectCard ({ data }) {
       setViewDetails(!viewDetails)
     }
   }
-
   return (
     <Wrapper>
         <Box onClick={() => toggleDetails()} open={viewDetails} ref={ref} id={id}>
@@ -294,15 +298,15 @@ export default function ProjectCard ({ data }) {
            {viewDetails &&
            <ImageWrapper>
            <ImageContainer id={id} maxHeight={image.dimensions.height} maxWidth={image.dimensions.width}>
-           {/* <Image 
-            placeholder={title}
+           <Image 
+            placeholder="blur"
             src={matchPhotoSource(id)} 
-            alt={image.placeholder} 
+            alt={image.placeholder}
             fill
             sizes="(max-width: 768px) 100vw,
             (max-width: 1200px) 50vw,
             33vw"
-            /> */}
+            />
            </ImageContainer>
            </ImageWrapper>
            }
