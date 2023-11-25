@@ -34,13 +34,12 @@ export default function About({ setSelectedTheme }) {
         <Content >
           <ExplainContainer>
           <LongWindedExplaination>
-            I am Frontend Web Developer with Full Stack dreams. I love so much
-            about the web and want to do my best in building it out further into
-            the unknown.
+            I am a frontend developer with fullstack chops. I love so much
+            about the web and want to do my best in creating spaces that are accessible to everyone.
             </LongWindedExplaination>
             <LongWindedExplaination>
             My objective is to create thoughtful, long lasting, and inclusive web
-            applications that help users share knowledge. If you have questions or
+            applications that help people share. If you have questions or
             would like to learn more about me, please reach out!
           </LongWindedExplaination>
           <ContactButton />
