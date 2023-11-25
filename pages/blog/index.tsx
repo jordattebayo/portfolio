@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { BlogLayout, PostCard } from "../../components";
 import type PostType from '../../interfaces/post'
 import { getAllPosts } from "../../lib/api";
-import { generateRssFeed } from "../../lib/feed";
 
 const CardList = styled.ul`
   padding: 0;
@@ -71,7 +70,6 @@ export const getStaticProps = async () => {
     'excerpt',
     'timeToRead'
   ])
-  await generateRssFeed();
 
   return {
     props: { allPosts },
