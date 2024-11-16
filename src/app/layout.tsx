@@ -37,8 +37,8 @@ export default function RootLayout({
           </Link>
           <p>
             Hi 👋🏽! My name is Jordan Booker, welcome to my professional page. I
-            am a curious fullstack developer that's seriously in love with the
-            web 🤓. Here you can find some projects that I'm proud of. <br />
+            am a curious fullstack developer that is seriously in love with the
+            web 🤓. Here you can find some projects that I am proud of. <br />
             <br />
             <i>Note: Pardon the dust as I work on modernizing my website.</i>
           </p>
