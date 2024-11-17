@@ -1,11 +1,11 @@
-import ProjectCard from './project-card';
-import type { Project } from './project-card';
+import type { Project } from '../interfaces/project';
 
-const projectData: Project[] = [
+export const projectData: Project[] = [
   {
     id: '0',
     slug: 'amplifier-creative',
     title: 'Amplifier Creative',
+    description: 'A sample descirption of some web technology here.',
     image: {
       src: '/assets/projects/amplifierScreenshot.png',
       placeholder: "Amplifier Creative's website",
@@ -28,6 +28,7 @@ const projectData: Project[] = [
     id: '1',
     slug: 'slate',
     title: 'React Line Chart for Slate.host',
+    description: 'A sample descirption of some web technology here.',
     image: {
       src: '/assets/projects/amplifierScreenshot.png',
       placeholder: 'An SVG Line Chart',
@@ -50,6 +51,7 @@ const projectData: Project[] = [
     id: '2',
     slug: 'travel-planner-app',
     title: 'Travel Planner App',
+    description: 'A sample descirption of some web technology here.',
     image: {
       src: '/assets/projects/amplifierScreenshot.png',
       placeholder: 'A gif of the travel planner app being used',
@@ -72,6 +74,7 @@ const projectData: Project[] = [
     id: '3',
     slug: 'lee',
     title: 'Lee® Indigood',
+    description: 'A sample descirption of some web technology here.',
     image: {
       src: '/assets/projects/amplifierScreenshot.png',
       placeholder: 'A mockup of a Lee Webpage',
@@ -94,6 +97,7 @@ const projectData: Project[] = [
     id: '4',
     slug: 'news',
     title: 'Evaluate News NLP',
+    description: 'A sample descirption of some web technology here.',
     image: {
       src: '/assets/projects/amplifierScreenshot.png',
       placeholder: 'A small news api integration app',
@@ -117,6 +121,7 @@ const projectData: Project[] = [
     id: '5',
     slug: 'photo-blog',
     title: 'Photo Blog',
+    description: 'A sample descirption of some web technology here.',
     image: {
       src: '/assets/projects/amplifierScreenshot.png',
       placeholder: 'A sample photo blog',
@@ -135,13 +140,3 @@ const projectData: Project[] = [
     git: 'https://github.com/jordattebayo/Udacity-Blog-Project',
   },
 ];
-
-export default function Projects() {
-  return (
-    <div className="flex flex-col gap-6">
-      {projectData.map((project: Project) => (
-        <ProjectCard project={project} key={project.id} />
-      ))}
-    </div>
-  );
-}

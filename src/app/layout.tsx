@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Nav from './_components/nav';
+import Footer from './_components/footer';
 import './globals.css';
-import Link from 'next/link';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -25,33 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const currentDate = new Date();
-
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="md:w-[850px] w-full flex flex-col gap-6 mx-auto px-3 py-6 ">
-          <Link href="/" className="text-4xl hover:underline">
-            jordan booker dot dev
-          </Link>
-          <p>
-            Hi 👋🏽! My name is Jordan Booker, welcome to my professional page. I
-            am a curious fullstack developer that is seriously in love with the
-            web 🤓. Here you can find some projects that I am proud of. <br />
-            <br />
-            <i>Note: Pardon the dust as I work on modernizing my website.</i>
-          </p>
-        </nav>
-        <div className="font-[family-name:var(--font-geist-sans)] my-16">
+        <Nav />
+        <div className="font-[family-name:var(--font-geist-sans)] my-8">
           {children}
         </div>
-        <footer className="py-3 row-start-3 flex gap-6 flex-wrap items-center justify-center">
-          <div>
-            &copy;{currentDate.getFullYear()} Jordan Booker. All rights
-            reserved.{' '}
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

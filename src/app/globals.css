@@ -5,14 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --highlight: #000;
+  --highlight-inverse: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --highlight: #fff;
+    --highlight-inverse: #000;
   }
-}
+} */
 
 body {
   color: var(--foreground);
