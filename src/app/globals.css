@@ -4,19 +4,19 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --highlight: #000;
+  --foreground: #1f2022;
+  --highlight: #1f2022;
   --highlight-inverse: #fff;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1f2022;
     --foreground: #ededed;
     --highlight: #fff;
-    --highlight-inverse: #000;
+    --highlight-inverse: #1f2022;
   }
-} */
+}
 
 body {
   color: var(--foreground);

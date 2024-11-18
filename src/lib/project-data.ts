@@ -3,11 +3,12 @@ import type { Project } from '../interfaces/project';
 export const projectData: Project[] = [
   {
     id: '0',
+    date: '01-01-2023',
     slug: 'amplifier-creative',
     title: 'Amplifier Creative',
-    description: 'A sample descirption of some web technology here.',
+    description: 'A website for a creative agency.',
     image: {
-      src: '/assets/projects/amplifierScreenshot.png',
+      src: '/amplifierScreenshot.png',
       placeholder: "Amplifier Creative's website",
       dimensions: {
         width: '620',
@@ -26,11 +27,13 @@ export const projectData: Project[] = [
   },
   {
     id: '1',
+    date: '01-01-2023',
     slug: 'slate',
     title: 'React Line Chart for Slate.host',
-    description: 'A sample descirption of some web technology here.',
+    description:
+      'A React based component that accepts data and creates a SVG line chart.',
     image: {
-      src: '/assets/projects/amplifierScreenshot.png',
+      src: '/chartScreenshot.png',
       placeholder: 'An SVG Line Chart',
       dimensions: {
         width: '384',
@@ -49,18 +52,20 @@ export const projectData: Project[] = [
   },
   {
     id: '2',
+    date: '01-01-2023',
     slug: 'travel-planner-app',
     title: 'Travel Planner App',
-    description: 'A sample descirption of some web technology here.',
+    description:
+      'A frameworkless application that shows location based information based on the users travel itenerary.',
     image: {
-      src: '/assets/projects/amplifierScreenshot.png',
+      src: '/travel-app.gif',
       placeholder: 'A gif of the travel planner app being used',
       dimensions: {
         width: '473',
         height: '409',
       },
     },
-    role: 'Developer',
+    role: 'Developer, Designer',
     difficulties: 'API calls dependent on other API calls',
     solution:
       'Utilize local storage and a set timeout function to store data and run subsequent API calls',
@@ -72,11 +77,12 @@ export const projectData: Project[] = [
   },
   {
     id: '3',
+    date: '01-01-2023',
     slug: 'lee',
     title: 'Lee® Indigood',
-    description: 'A sample descirption of some web technology here.',
+    description: 'A landing marketing page for Lee Jeans.',
     image: {
-      src: '/assets/projects/amplifierScreenshot.png',
+      src: '/desktopLeeIndigoodMock.png',
       placeholder: 'A mockup of a Lee Webpage',
       dimensions: {
         width: '600',
@@ -95,11 +101,12 @@ export const projectData: Project[] = [
   },
   {
     id: '4',
+    date: '01-01-2023',
     slug: 'news',
     title: 'Evaluate News NLP',
-    description: 'A sample descirption of some web technology here.',
+    description: 'A small app that integrates with a news API',
     image: {
-      src: '/assets/projects/amplifierScreenshot.png',
+      src: '/languageScreenshot.png',
       placeholder: 'A small news api integration app',
       dimensions: {
         width: '540',
@@ -119,18 +126,19 @@ export const projectData: Project[] = [
   },
   {
     id: '5',
+    date: '01-01-2023',
     slug: 'photo-blog',
     title: 'Photo Blog',
-    description: 'A sample descirption of some web technology here.',
+    description: 'A simple photo blog',
     image: {
-      src: '/assets/projects/amplifierScreenshot.png',
+      src: '/blogScreenshot.jpg',
       placeholder: 'A sample photo blog',
       dimensions: {
         width: '420',
         height: '350',
       },
     },
-    role: 'Developer',
+    role: 'Developer, Designer',
     difficulties: 'Layout and design of photos within article',
     solution:
       'Utilized large size photos to pause the reader while still showing some text to indicate there is more to read.',
