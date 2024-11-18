@@ -25,11 +25,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const currentDate = new Date();
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-[--foreground]`}
       >
         <Nav />
         <div className="font-[family-name:var(--font-geist-sans)] my-8">

@@ -1,4 +1,5 @@
-import type { Project } from '../../lib/project-data';
+import type { Project } from '@/interfaces/project';
+import Link from 'next/link';
 
 interface ProjectCardProps {
   project: Project;
@@ -6,12 +7,12 @@ interface ProjectCardProps {
 
 export default function ProjectCard(data: ProjectCardProps) {
   const {
-    project: { title, description },
+    project: { title, description, slug },
   } = data;
   return (
-    <div>
-      <h3>{title}</h3>
+    <Link href={`projects/${slug}`} className="float-left">
+      <h3 className="text-xl">{title}</h3>
       <p>{description}</p>
-    </div>
+    </Link>
   );
 }
