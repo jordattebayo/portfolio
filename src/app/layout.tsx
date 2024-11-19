@@ -4,15 +4,25 @@ import Nav from './_components/nav';
 import Footer from './_components/footer';
 import './globals.css';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
+const sourceSans3 = localFont({
+  src: './fonts/SourceSans3-Regular.ttf',
+  variable: '--font-source-sans-3',
+  weight: '400',
 });
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+const sourceSans3Light = localFont({
+  src: './fonts/SourceSans3-Light.ttf',
+  variable: '--font-source-sans-3-light',
+  weight: '100',
+});
+const sourceSans3Bold = localFont({
+  src: './fonts/SourceSans3-Bold.ttf',
+  variable: '--font-source-sans-3-bold',
+  weight: '700',
+});
+const sourceSans3Black = localFont({
+  src: './fonts/SourceSans3-Black.ttf',
+  variable: '--font-source-sans-3-black',
+  weight: '700',
 });
 
 export const metadata: Metadata = {
@@ -28,10 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-[--foreground]`}
+        className={`font-[family-name:var(--font-source-sans-3)] text-lg ${sourceSans3.variable} ${sourceSans3Light.variable} ${sourceSans3Bold.variable} ${sourceSans3Black.variable} antialiased text-[--foreground]`}
       >
         <Nav />
-        <div className="font-[family-name:var(--font-geist-sans)] my-8">
+        <div className="font-[family-name:var(--font-source-sans-3)] my-8">
           {children}
         </div>
         <Footer />
