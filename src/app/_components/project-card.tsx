@@ -11,7 +11,7 @@ export default function ProjectCard(data: ProjectCardProps) {
   } = data;
   return (
     <Link href={`projects/${slug}`} className="float-left">
-      <h3 className="text-xl">{title}</h3>
+      <h3 className="text-2xl">{title}</h3>
       <p>{description}</p>
     </Link>
   );

@@ -1,19 +1,30 @@
+'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Header from './header';
+import { PROJECT_PATH, ABOUT_PATH } from '@/lib/constants';
 
 export default function Nav() {
-  // Todo - create current page tracker to pass in as props to header so that blurb
-  // can change depending on route visited
-  // const currentPage = true;
-
+  const pathname = usePathname();
+  const basePath = pathname.split('/')[1];
   return (
     <div className="md:w-[850px] w-full flex flex-col gap-6 mx-auto px-3 py-6 pb-3">
       <Header />
-      <nav className="flex flex-row gap-6">
-        <Link href="/" className="hover:underline">
+      <nav className="flex flex-row gap-6 text-xl">
+        <Link
+          href="/"
+          className={`${
+            basePath === PROJECT_PATH || !basePath ? 'active' : ''
+          } hover:underline`}
+        >
           Portfolio
         </Link>
-        <Link href="/about" className="hover:underline">
+        <Link
+          href="/about"
+          className={`${
+            basePath === ABOUT_PATH ? 'active' : ''
+          } hover:underline`}
+        >
           About
         </Link>
         <a
