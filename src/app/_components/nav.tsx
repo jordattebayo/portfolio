@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Header from './header';
-import { PROJECT_PATH, ABOUT_PATH } from '@/lib/constants';
-import { DarkTheme, LightTheme, Theme } from '@/interfaces/theme';
+import { ABOUT_PATH } from '@/lib/constants';
+import { DarkTheme, Theme } from '@/interfaces/theme';
 
 function getThemeText(theme: Theme | undefined) {
   if (theme === undefined) return '    ';
@@ -19,9 +19,22 @@ const updateTheme = (newTheme: string, oldTheme?: string) => {
   }
 };
 
+function getPortfolioText(basePath: string, projectsPath?: string | undefined) {
+  console.log(basePath, projectsPath);
+  if (basePath === 'projects' && projectsPath != '') {
+    return '← Back';
+  } else if (basePath === '') {
+    return 'Portfolio';
+  } else {
+    return 'Portfolio';
+  }
+}
+
 export default function Nav() {
   const pathname = usePathname();
-  const basePath = pathname.split('/')[1];
+  const pathsArr = pathname.split('/');
+  const basePath = pathsArr[1];
+  const projectsPath = pathsArr[2];
 
   //default theme is light
   const [theme, setTheme] = useState<Theme>();
@@ -41,6 +54,7 @@ export default function Nav() {
       }
     }
     function checkPreferredColorScheme() {
+      console.log('checking for preferred color scheme');
       if (!window.matchMedia) {
         //matchMedia method not supported
         return undefined;
@@ -53,14 +67,16 @@ export default function Nav() {
     // Check for a stored theme, otherwise check for a preferred color scheme
     checkLocalStorageForTheme()
       .then((storedTheme) => {
-        if (storedTheme === 'dark' || storedTheme === 'light') {
-          initTheme = storedTheme;
-          return;
-        }
-
         const preferredTheme: DarkTheme | undefined =
           checkPreferredColorScheme();
-        if (preferredTheme) {
+
+        if (storedTheme === 'dark' || storedTheme === 'light') {
+          initTheme = storedTheme;
+          setTheme(initTheme);
+          if (typeof window !== undefined) {
+            document.querySelector('html')?.classList.add(`${initTheme}-theme`);
+          }
+        } else if (preferredTheme) {
           initTheme = preferredTheme;
         }
       })
@@ -71,12 +87,13 @@ export default function Nav() {
         if (preferredTheme) {
           initTheme = preferredTheme;
         }
+      })
+      .finally(() => {
+        setTheme(initTheme);
+        if (typeof window !== undefined) {
+          document.querySelector('html')?.classList.add(`${initTheme}-theme`);
+        }
       });
-
-    setTheme(initTheme);
-    if (typeof window !== undefined) {
-      document.querySelector('html')?.classList.add(`${initTheme}-theme`);
-    }
   }, []);
 
   useEffect(() => {
@@ -101,11 +118,9 @@ export default function Nav() {
       <nav className="flex flex-row gap-6 text-xl">
         <Link
           href="/"
-          className={`${
-            basePath === PROJECT_PATH || !basePath ? 'active' : ''
-          } hover:underline`}
+          className={`${!basePath ? 'active' : ''} hover:underline`}
         >
-          Portfolio
+          {getPortfolioText(basePath, projectsPath)}
         </Link>
         <Link
           href="/about"
