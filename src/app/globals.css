@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @property --background {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #c0ffee;
+} */
+
+/* 
+
+https://github.com/ekafyi/tailwindcss-view-transitions
+
+::view-transition-old(main-image),
+::view-transition-new(main-image) {
+  transform-origin: right top;
+}
+
+::view-transition-new(main-image) {
+  animation: 400ms ease-out both grow;
+}
+
+figure {
+  view-transition-name: main-image;
+} */
+
+:root, :root.light-them {
+  --background: #ffffff;
+  --foreground: #1f2022;
+  --highlight: #1f2022;
+  --highlight-inverse: #fff;
+}
+
+
+:root.dark-theme {
+  --background: #1f2022;
+  --foreground: #ededed;
+  --highlight: #fff;
+  --highlight-inverse: #1f2022;
+}
+
+.light-theme {
+	color-scheme: light;
+}
+
+.dark-theme {
+	color-scheme: dark;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #1f2022;
@@ -9,14 +55,14 @@
   --highlight-inverse: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #1f2022;
     --foreground: #ededed;
     --highlight: #fff;
     --highlight-inverse: #1f2022;
   }
-}
+} */
 
 body {
   color: var(--foreground);
