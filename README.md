@@ -9,7 +9,8 @@ Feel free to poke around and let me know what you think!
 In true frontend dev fashion I have began to re-write this app. So there's quite a bit I have to do.. Anyways here are some things I'll try to get to sometime, if you want to follow along.
 
 - Interesting animation to add to header 'jordan booker dot dev'
-- Darkmode toggle
+- Add view transitions for project pages
+- Add metadata and OG SEO info
 - Add information to projects pages
     - logic to disable live site and codebase links if information is missing
 - Digital resume

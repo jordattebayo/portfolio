@@ -2,13 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @property --background {
+/* 
+
+Consider using @ properties to strictly type css variables
+
+@property --background {
   syntax: "<color>";
   inherits: false;
   initial-value: #c0ffee;
 } */
 
 /* 
+
+View transitions example. 
 
 https://github.com/ekafyi/tailwindcss-view-transitions
 
@@ -54,15 +60,6 @@ figure {
   --highlight: #1f2022;
   --highlight-inverse: #fff;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1f2022;
-    --foreground: #ededed;
-    --highlight: #fff;
-    --highlight-inverse: #1f2022;
-  }
-} */
 
 body {
   color: var(--foreground);

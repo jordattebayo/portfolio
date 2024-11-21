@@ -30,6 +30,14 @@ function getPortfolioText(basePath: string, projectsPath?: string | undefined) {
   }
 }
 
+function getAnimationText(animate: boolean): string {
+  let text = 'Animations Off';
+  if (animate) {
+    text = 'Animations On';
+  }
+  return text;
+}
+
 export default function Nav() {
   const pathname = usePathname();
   const pathsArr = pathname.split('/');
@@ -38,6 +46,7 @@ export default function Nav() {
 
   //default theme is light
   const [theme, setTheme] = useState<Theme>();
+  const [animate, setAnimate] = useState<boolean>(true);
 
   useEffect(() => {
     async function checkLocalStorageForTheme() {
@@ -112,9 +121,13 @@ export default function Nav() {
     }
   }
 
+  function toggleAnimation() {
+    setAnimate((animate) => !animate);
+  }
+
   return (
     <div className="md:w-[850px] w-full flex flex-col gap-6 mx-auto px-3 py-6 pb-3">
-      <Header />
+      <Header animate={animate} toggleAnimate={toggleAnimation} />
       <nav className="flex flex-row gap-6 text-xl">
         <Link
           href="/"
@@ -145,7 +158,18 @@ export default function Nav() {
             <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"></path>
           </svg>
         </a>
-        <button onClick={toggleTheme}>{getThemeText(theme)}</button>
+        <button
+          className="text-sm border border-solid px-3 rounded-md"
+          onClick={toggleTheme}
+        >
+          {getThemeText(theme)}
+        </button>
+        <button
+          className="text-sm border border-solid px-3 rounded-md"
+          onClick={toggleAnimation}
+        >
+          {getAnimationText(animate)}
+        </button>
       </nav>
     </div>
   );
