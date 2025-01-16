@@ -72,10 +72,6 @@ export default function Nav() {
 
         if (storedTheme === 'dark' || storedTheme === 'light') {
           initTheme = storedTheme;
-          setTheme(initTheme);
-          if (typeof window !== undefined) {
-            document.querySelector('html')?.classList.add(`${initTheme}-theme`);
-          }
         } else if (preferredTheme) {
           initTheme = preferredTheme;
         }
